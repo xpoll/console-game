@@ -1,5 +1,8 @@
-package cn.blmdz.game.console;
+package cn.blmdz.game.console.enums;
 
+/**
+ * ansi 字符颜色
+ */
 public enum Instruction {
 	CMD_0("\033[0m", "关闭所有属性 "),
 	CMD_1("\033[1m", "设置高亮度"),
@@ -31,8 +34,8 @@ public enum Instruction {
 	CMD_h("\033[?25h", "显示光标"),
 	
 	;
-	String value;
-	String description;
+	public String value;
+	public String description;
 	
 	Instruction (String value, String description) {
 		this.value = value;

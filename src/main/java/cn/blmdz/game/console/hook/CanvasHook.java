@@ -1,15 +1,19 @@
-package cn.blmdz.game.console;
+package cn.blmdz.game.console.hook;
 
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 import java.util.List;
 
-import com.google.common.collect.Lists;
+import cn.blmdz.game.console.enums.Instruction;
 
+/**
+ * 画布
+ */
 public class CanvasHook {
-	public final static List<String> contents = Lists.newArrayList();
+	public final static List<String> contents = new ArrayList<String>();
 	
 	public static boolean cmd = true;
 

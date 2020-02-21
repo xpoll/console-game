@@ -1,4 +1,4 @@
-package cn.blmdz.game.console;
+package cn.blmdz.game.console.hook;
 
 import com.sun.jna.platform.win32.Kernel32;
 import com.sun.jna.platform.win32.User32;
@@ -10,6 +10,9 @@ import com.sun.jna.platform.win32.WinUser;
 import com.sun.jna.platform.win32.WinUser.HHOOK;
 import com.sun.jna.platform.win32.WinUser.LowLevelKeyboardProc;
 
+/**
+ * 键盘监控
+ */
 public abstract class KeyboardHook implements Runnable {
 	private HHOOK hhk;
 
@@ -41,7 +44,7 @@ public abstract class KeyboardHook implements Runnable {
 
 	// 安装钩子
 	public void setHookOn() {
-		System.out.println("Hook On!");
+		System.out.println("游戏开始啦，【ESC】键退出");
 
 		HMODULE hMod = Kernel32.INSTANCE.GetModuleHandle(null);
 		hhk = User32.INSTANCE.SetWindowsHookEx(User32.WH_KEYBOARD_LL, keyboardProc, hMod, 0);
